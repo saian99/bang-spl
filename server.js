@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
+const spots = require('./models/skate_spots.js')
 // PORT
 const PORT = process.env.PORT || 3333
 // Database
@@ -21,8 +22,22 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method'))
 // routes
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.get('/spots', (req, res) => {
+  res.render('index.ejs', {allSpots: spots})
+})
+
+app.get('/spots/new', (req, res) => {
+  res.render('new.ejs')
+})
+
+app.post('/spots', (req, res) => {
+  const addedSpot = {
+    name: req.body.name,
+    description: req.body.description,
+    address: req.body.address,
+  }
+  spots.push(addedSpot)
+  res.redirect('/spots')
 })
 app.listen(PORT, () => {
   console.log('Listening on port:', PORT)

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>S.S.S</h1>
+    <h2>Skate Spot Saver</h2>
+    <div class="container">
+      <%
+      for (var i = 0; i < allSpots.length; i++) {
+      %>
+      <div class="spot-row">
+        <a href="/spot/<%=i %>">
+          <p><%=allSpots[i].name %></p>
+        </a>
+        <form action="/spots/<%=i %>?_method=DELETE" method="POST">
+          <input type="submit" value="DELETE">
+          <a href="/spots/<%=i%>/edit"><button type="button">Edit</button></a>
+        </form>
+
+      </div>
+      <%
+      }
+      %>
+    </div>
+  </body>
+</html>
