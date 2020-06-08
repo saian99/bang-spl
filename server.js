@@ -43,9 +43,12 @@ app.post('/spots', (req, res) => {
 app.delete('/spots/:id', (req, res) => {
   spots.splice(req.params.id, 1)
   res.redirect('/spots')
-
-  
 })
+
+app.get('/spots/:id/edit', (req, res) => {
+  res.render('edit.ejs')
+})
+
 app.listen(PORT, () => {
   console.log('Listening on port:', PORT)
 })
