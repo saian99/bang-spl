@@ -3,5 +3,23 @@
 }
 
 body {
-  background-color: red;
+  background-color: gray;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+h1 {
+    font-size: 45px;
+    font-family: 'Rock Salt', cursive;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 30px;
+  }

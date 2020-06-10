@@ -2,22 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/show.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <title></title>
   </head>
   <body>
     <div class="container">
-
-
-    <%
-    for (var i = 0; i < spots.length; i++) {
-    %>
-    <h1>Skate Spot Show Page</h1>
-      <%=spots[i].name%>
-      <%= spots[i].description%>
-      <%= spots[i].address%>
-    <%
-    }
-    %>
+      <h1><%=spots.name%></h1><br/>
+      <p>Spot Description: <%= spots.description%></p><br/>
+      <p>Spot Location: <%= spots.address%></p><br/>
+      <img src="<%=spots.img; %>" alt="park images">
     </div>
+    <div class="footer">
+      <a href="/">Return Home</a>
+    </div>
+
+
   </body>
 </html>

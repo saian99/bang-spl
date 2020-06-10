@@ -1,0 +1,28 @@
+.head {
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+}
+
+h2 {
+  font-size: 45px;
+  font-family: 'Rock Salt', cursive;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+body {
+  background-color: gray;
+}
+.footer {
+  text-align: center;
+  padding: 30px;
+}
+
+.img {
+  text-align: center;
+}

@@ -32,7 +32,7 @@ router.get('/spots/:id/show', (req, res) => {
         res.render(
             'show.ejs',
             {
-                spots:showSpot
+              spots: showSpot
             }
         )
     })
@@ -46,8 +46,8 @@ router.post('/', (req, res) => {
     })
 })
 
-router.delete('/:id', (req, res) => {
-  Spots.remove({}, (error, deletedSpot) => {
+router.delete('/:id', (req, res, next) => {
+Spots.remove({}, (error, data) => {
     res.redirect('/')
   })
 })
@@ -62,5 +62,9 @@ router.get('/', (req, res) => {
         );
     })
 });
+
+router.get('/spots/about', (req, res) => {
+  res.render('about.ejs')
+})
 
 module.exports = router;

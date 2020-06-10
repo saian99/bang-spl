@@ -9,13 +9,23 @@
   text-align: center;
 }
 
+.img {
+  text-align: center;
+}
+
 .spot-row {
   text-align: center;
   padding-top: 20px;
 }
 
 nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   text-align: center;
+  /* background-color: purple; */
+  padding: 20px;
+
 }
 
 h1 {
@@ -29,4 +39,9 @@ p {
 
 body {
   background-color: gray;
+}
+
+a {
+  /* text-decoration: none; */
+  color: black;
 }

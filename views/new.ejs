@@ -2,19 +2,35 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <title></title>
   </head>
   <body>
-    <h1>New Skate Spot Page</h1>
-    <form action="/" method="POST">
-      Name: <input type="text" name="name"/><br/>
-      Description: <input type="text" name="description"/><br/>
-      Address: <input type="text" name="address"/><br/>
+    <div class="head">
+      <h1>New Skate Spot</h1>
+    </div>
+    <div class="body">
+      <form action="/" method="POST">
+        Name: <input type="text" name="name"/><br/>
+        Description: <input type="text" name="description"/><br/>
+        Address: <input type="text" name="address"/><br/>
+        Image: <input type="text" name="img"/><br/>
+
+        <div class="btn">
+          <input type="submit" value="Add Spot"/>
+        </div>
 
 
-      <input type="submit" value="Add Spot"/>
+      </form>
+    </div>
+    <div class="img">
+      <img src="https://i.pinimg.com/originals/5b/af/81/5baf81b9fe7e787c0388f541bff82c39.jpg" alt="">
+    </div>
+    <div class="footer">
+      <a href="/">Return Home</a>
 
-    </form>
+    </div>
 
   </body>
 </html>
