@@ -2,19 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/edit.css">
     <title></title>
   </head>
   <body>
-    <h1>Edit Skate Spot</h1>
-    <form action="/spots/" method="POST">
-      Name: <input type="text" name="name" value="<%=spots.name%>"/><br/>
-      Description: <input type="text" name="description" value="<%=spots.description%>"/><br/>
-      Address: <input type="text" name="address" value="<%=spots.address%>"/><br/>
+    <div class="head">
+      <h1>Edit Skate Spot</h1>
+    </div>
+    <div class="container">
+      <form action="/spots/<%=spots.id%>?_method=PUT" method="POST">
+       Name: <input type="text" name="name" value="<%=spots.name%>"/><br/>
+      Description: <input type="text" name="description" value="<%=spots.description%>" /><br/>
+      Address: <input type="text" name="address" value="<%=spots.address%>" /><br/>
 
 
       <input type="submit" value="Submit Changes"/>
 
     </form>
-
+    </div>
   </body>
 </html>

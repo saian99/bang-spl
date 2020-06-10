@@ -5,7 +5,8 @@ const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
-const spots = require('./models/skate_spots.js')
+const Spots = require('./models/skate_spots.js')
+
 // PORT
 const PORT = process.env.PORT || 3333
 // Database
@@ -21,34 +22,11 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method'))
-// routes
-app.get('/spots', (req, res) => {
-  res.render('index.ejs', {allSpots: spots})
-})
 
-app.get('/spots/new', (req, res) => {
-  res.render('new.ejs')
-})
+const spotsController = require('./controllers/skate_spots.js')
+app.use(spotsController)
 
-app.post('/spots', (req, res) => {
-  const addedSpot = {
-    name: req.body.name,
-    description: req.body.description,
-    address: req.body.address,
-  }
-  spots.push(addedSpot)
-  res.redirect('/spots')
-})
-
-app.delete('/spots/:id', (req, res) => {
-  spots.splice(req.params.id, 1)
-  res.redirect('/spots')
-})
-
-app.get('/spots/:id/edit', (req, res) => {
-  res.render('edit.ejs')
-})
-
+// Listener
 app.listen(PORT, () => {
   console.log('Listening on port:', PORT)
 })

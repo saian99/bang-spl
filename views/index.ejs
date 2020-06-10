@@ -2,27 +2,34 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <title></title>
   </head>
   <body>
-    <h1>S.S.S</h1>
-    <h2>Skate Spot Saver</h2>
+    <div class="header">
+      <h1>
+        Skate Spot Saver
+      </h1>
+    </div>
+    <div class="headerTwo">
+      <h2>Find and save skate parks and spots that you haven't been to or want to return to.</h2>
+    </div>
     <nav>
       <a href="/spots/new">Add New Spot</a>
     </nav>
     <div class="container">
       <%
-      for (var i = 0; i < allSpots.length; i++) {
+      for (var i = 0; i < spots.length; i++) {
       %>
       <div class="spot-row">
-        <a href="/spot/<%=i %>">
-          <p><%=allSpots[i].name %></p>
+        <a href="/spots/<%=spots[i].id%>/show">
+          <p><%=spots[i].name %></p>
         </a>
         <form action="/spots/<%=i %>?_method=DELETE" method="POST">
           <input type="submit" value="DELETE">
-          <a href="/spots/<%=i%>/edit"><button type="button">Edit</button></a>
         </form>
-
+          <a href="/spots/<%=spots[i].id%>/edit"><button type="button">Edit</button></a>
       </div>
       <%
       }
