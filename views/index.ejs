@@ -26,10 +26,10 @@
         <a href="/spots/<%=spots[i].id%>/show">
           <p><%=spots[i].name %></p>
         </a>
-        <form action="/spots/<%=i %>?_method=DELETE" method="POST">
+        <form action="/<%=i %>?_method=DELETE" method="POST">
           <input type="submit" value="DELETE">
         </form>
-          <a href="/spots/<%=spots[i].id%>/edit"><button type="button">Edit</button></a>
+          <a href="/<%=spots[i].id%>/edit"><button type="button">Edit</button></a>
       </div>
       <%
       }

@@ -5,7 +5,7 @@ const Spots = require('../models/skate_spots.js')
 
 
 
-router.get('/spots/:id/edit', (req, res) => {
+router.get('/:id/edit', (req, res) => {
   Spots.findById(req.params.id, (error, foundSpot) => {
     res.render('edit.ejs',
     {
@@ -17,7 +17,7 @@ router.get('/spots/:id/edit', (req, res) => {
 
 router.put('/spots/:id', (req, res) => {
   Spots.findByIdAndUpdate(req.params.id, req.body, (err, updatedSpot) => {
-    res.redirect('/spots')
+    res.redirect('/')
   })
 })
 //
@@ -40,15 +40,15 @@ router.get('/spots/:id/show', (req, res) => {
 
 
 
-router.post('/spots', (req, res) => {
+router.post('/', (req, res) => {
     Spots.create(req.body, (error, createdSpot) => {
-        res.redirect('/spots');
+        res.redirect('/');
     })
 })
 
-router.delete('/spots/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   Spots.remove({}, (error, deletedSpot) => {
-    res.redirect('/spots')
+    res.redirect('/')
   })
 })
 
